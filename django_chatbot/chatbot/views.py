@@ -34,6 +34,8 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import os
 from huggingface_hub import login
 
+# Load the Mistral model and tokenizer from Hugging Face
+# login("")
 
 model_name = "mistralai/Mistral-7B-Instruct-v0.3"  # Replace with the correct model name on Hugging Face
 tokenizer = AutoTokenizer.from_pretrained(model_name)
