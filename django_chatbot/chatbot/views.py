@@ -2,7 +2,7 @@
 # from django.http import JsonResponse
 # import openai
 
-# openai_api_key = "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"
+# openai_api_key = ""
 # openai.api_key = openai_api_key
 
 # def ask_openai(message):
@@ -35,7 +35,7 @@ import os
 from huggingface_hub import login
 
 # Load the Mistral model and tokenizer from Hugging Face
-login("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")
+login("")
 
 model_name = "mistralai/Mistral-7B-Instruct-v0.3"  # Replace with the correct model name on Hugging Face
 tokenizer = AutoTokenizer.from_pretrained(model_name)
