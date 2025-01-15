@@ -2,9 +2,9 @@
 
 {% block styles %}
 <style>
-    body, html {
+    /* body, html {
       height: 100%;
-    }
+    } */
 
     .messages-box {
       flex: 1;
@@ -65,9 +65,9 @@
 
 
 {% block content %}
-<div class="chat-container">
+<div class="container" style="margin-top: 50px; max-height:100vh; ">
   <div class="card flex-grow-1">
-    <div class="card-header bg-primary text-white">Chat</div>
+    <div class="card-header text-black text-center h3">Welcome to your AI Chatbot 🤖 - Let's Chat</div>
     <div class="card-body messages-box">
       
       <ul class="list-unstyled messages-list">
@@ -89,12 +89,12 @@
     <br><br>
     <br><br>
   </div>
-  <form class="message-form">
+  <form class="message-form container" style="margin-top: 50px; max-height:100vh;">
     {%csrf_token%}
     <div class="input-group">
       <input type="text" class="form-control message-input" placeholder="Type your message...">
       <div class="input-group-append">
-        <button type="submit" class="btn btn-primary btn-send">Send</button>
+        <button type="submit" class="btn btn-dark">Send</button>
       </div>
     </div>
   </form>
@@ -116,11 +116,11 @@
     const messageItem = document.createElement('li');
     messageItem.classList.add('message', 'sent');
     messageItem.innerHTML = `
-        <div class="message-text">
-            <div class="message-sender">
+        <div class="message-text bg-dark ">
+            <div class="message-sender" style="color: white">
                 <b>You</b>
             </div>
-            <div class="message-content">
+            <div class="message-content " style="color: white">
                 ${message}
             </div>
         </div>`;

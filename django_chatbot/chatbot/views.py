@@ -35,7 +35,7 @@ import os
 from huggingface_hub import login
 
 # Load the Mistral model and tokenizer from Hugging Face
-# login("")
+login("")
 
 model_name = "mistralai/Mistral-7B-Instruct-v0.3"  # Replace with the correct model name on Hugging Face
 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -61,6 +61,7 @@ def ask_mistral(message):
 def chatbot(request):
     if request.method == 'POST':
         message = request.POST.get('message')
+        # response = ask_mistral(message)
         response = ask_mistral(message)
         return JsonResponse({'message': message, 'response': response})
     return render(request, 'chatbot.html')
