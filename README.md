@@ -1,4 +1,4 @@
-# Chatbot with NLP
+# Conversational Chatbot with Natural Language Processing
 
 ## Project Overview
 This project showcases a Chatbot application built using **Django** as the backend framework and **JavaScript** for the front-end interface. The chatbot leverages the **MistralAI API** for natural language processing (NLP) to deliver a seamless conversational experience. The goal of this project is to demonstrate the integration of cutting-edge AI models into a web application.
