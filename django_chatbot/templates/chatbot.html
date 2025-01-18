@@ -65,8 +65,16 @@
 
 
 {% block content %}
+
 <div class="container" style="margin-top: 50px; max-height:100vh; ">
+  {% if user.is_authenticated %}
+  <div class="text-white">
+    <h6>
+      <a style="color: black; display: flex; justify-content: flex-end;" href="logout">Logout</a>
+    </h6>
+  </div>    {%endif%}
   <div class="card flex-grow-1">
+    
     <div class="card-header text-black text-center h3">Welcome to your AI Chatbot 🤖 - Let's Chat</div>
     <div class="card-body messages-box">
       
@@ -78,7 +86,7 @@
               <b>AI Chatbot</b>
             </div>
             <div class="message-content">
-              Hi, I am your AI Chatbot, you can ask me anything.
+              Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
             </div>
           </div>
         </li>
