@@ -9,7 +9,7 @@ llm = HuggingFaceHub(repo_id="mistralai/Mistral-7B-Instruct-v0.3",
                           "max_length": 1000,  # Maximum length of the generated sequence
                           "max_new_tokens": 10000,  # Maximum number of new tokens to generate
                      },
-                     huggingfacehub_api_token="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"
+                     huggingfacehub_api_token="raplcae_with_your_api_key"
                     )
 
 # Create your views here.
