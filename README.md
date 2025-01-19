@@ -50,11 +50,20 @@ Follow these steps to set up the project on your local machine:
 
 8. Open your browser and visit `http://127.0.0.1:8000` to access the application.
 
+## ChatBot Interfaces
+### Login Interface
+![Login Interface](Images/Chatbot-login.png)
+
+### Register Interface
+![Register Interface](Images/ChatBot-Registeration.png)
+
+### Main Interface
+![Main Interface](Images/Chatbot-r.png)
 
 ## Future Improvements
 - Expand the chatbot's functionality to include multi-language support.
 - Add sentiment analysis for enhanced user experience.
-- Implement user authentication to personalize interactions.
+
 
 <!-- ## Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with your proposed changes. -->
