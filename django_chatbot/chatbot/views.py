@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import auth
 from django.contrib.auth.models import User
+from .models import Chat
+from django.utils import timezone
 from langchain import HuggingFaceHub
 
 llm = HuggingFaceHub(repo_id="mistralai/Mistral-7B-Instruct-v0.3",
@@ -9,17 +11,21 @@ llm = HuggingFaceHub(repo_id="mistralai/Mistral-7B-Instruct-v0.3",
                           "max_length": 1000,  # Maximum length of the generated sequence
                           "max_new_tokens": 10000,  # Maximum number of new tokens to generate
                      },
-                     huggingfacehub_api_token="raplcae_with_your_api_key"
+                     huggingfacehub_api_token="replace_with_you_api_key"
                     )
 
 # Create your views here.
 def chatbot(request):
+    chats = Chat.objects.filter(user = request.user)
+
     if request.method == 'POST':
         message = request.POST.get('message')
         response = llm.invoke(message)
-        print(response)
+        chat = Chat(user=request.user, message=message, response=response, created_at=timezone.now())
+        chat.save()
+        # print(response)
         return JsonResponse({'message': message, 'response': response})
-    return render(request, 'chatbot.html')
+    return render(request, 'chatbot.html', {'chats': chats})
 
 def login(request):
     if request.method == 'POST':

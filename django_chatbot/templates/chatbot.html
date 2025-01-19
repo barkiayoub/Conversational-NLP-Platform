@@ -90,6 +90,35 @@
             </div>
           </div>
         </li>
+
+          {% for chat in chats %}
+            {% if chat.user == request.user %}
+
+              <li class="message sent">
+            <div class="message-text bg-dark ">
+              <div class="message-sender">
+                <b class="text-white" style="color: white">You</b>
+              </div>
+              <div class="message-content" style="color: white">
+                {{chat.message}}
+              </div>
+            </div>
+          </li>
+
+          <li class="message received">
+            <div class="message-text">
+              <div class="message-sender">
+                <b>AI Chatbot</b>
+              </div>
+              <div class="message-content">
+                {{chat.response}}
+              </div>
+            </div>
+          </li>
+
+            {% endif %}
+          {% endfor %}
+
       </ul>
       
     </div>
